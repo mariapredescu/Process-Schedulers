@@ -1,0 +1,48 @@
+--------------------------------TEMA 1 - POO-----------------------------------
+PREDESCU Maria
+Grupa 324CB
+
+	
+	Rezolvarea temei la POO consta in 6 clase, pe langa cele 4 oferite in
+arhiva cu resurse puse la dispozitie de autorii temei. 
+	1.) Clasa Procese, ce contine 7 metode care implementeaza cele
+7 tipuri de procese: CheckPrime (returneaza 1 daca numarul dat este prim si 0
+daca numarul nu este prim), NextPrime (returneaza cel mai mic numar prim ce 
+urmeaza dupa numarul dat), Fibonacci (returneaza numarul din sirul lui Fibonacci
+modulo 9973 de pe pozitia indicata de numarul dat ca parametru), Sqrt (returneaza
+partea intreaga a radicalului modulului numarului dat), Square (returneaza patratul
+numarului dat), Cube (returneaza cubul numarului dat), Factorial (returneaza 
+facorialul numarului dat, modulo 9973).
+	2.) Clasa abstracta Scheduler ce contine metoda abstracta scheduler ce va
+fi ulterior suprascrisa in clasele ce extind clasa Scheduler in functie de tipul
+de planificator cerut.
+	3.) Clasa RandomScheduler extinde clasa abstracta Scheduler si contine 
+metoda scheduler ce implementeaza un planificator ce selecteaza, aleator,
+un proces pentru rulare din procesele existente in sistem. Procesul este selectat
+cu ajutorul clasei Random care genereaza un numar de la 0 la numarul de procese
+existente in fisierul de input dat. Fiecarui proces ii corespunde un indice
+astfel ca daca este generat numarul asociat procesului, spre exemplu, Sqrt, atunci
+va fi apelata metoda Sqrt. In fisierul de iesire sunt scrise datele procesate.
+	4.) Clasa RoundRobinSCheduler extinde clasa abstracta Scheduler si contine
+metoda scheduler ce implementeaza un planificator ce selecteaza un proces astfel 
+incat, in orice moment de timp, sa existe o diferenta de maxim o unitate intre
+numarul de rulari al oricaror doua procese. Metoda ruleaza la rand toate procesele
+existente in fisierul de input pana cand nu mai exista numere ce trebuie procesate.
+Astfel, va exista mereu maxim o unitate diferenta intre numarul de rulari
+al oricaror doua procese. In fisierul de iesire se vor scrie datele procesate.
+	5.) Clasa WeightedScheduler extinde clasa abstracta Scheduler si contine
+metoda scheduler ce implementeaza un planificator ce selecteaza in proces astfel
+incat, la momente multiplu de t ( unde t = suma(cote) / cmmdc(cote)), sa asigure
+respectarea cotelor impuse de administrator. Metoda ruleaza la rand procesele
+de atatea ori cat arata cota procesului respectiv impartita la cel mai mare
+divizor comun al cotelor proceselor din fisierul curent. In acest mod se respecta
+cotele impuse. Pentru a calcula cmmdc al cotelor au fost implementate doua metode:
+una care calculeaza cmmdc a doua numere si metoda ce calculeaza cmmdc al mai multor
+numere pentru a putea calcula cmmdc al cotelor proceselor din sistem. De asemenea, 
+am implementat si o metoda care pune intr-un vector cotele proceselor din sistem
+pentru a putea calcula cmmdc al acestora.
+	6.) Clasa MainClass este clasa ce contine metoda main. Aici se determina 
+tipul de planificator ce trebuie aplicat pe fisierul curent si in functie de 
+acesta este apelata metoda scheduler specifica planificatorului dorit.
+
+
